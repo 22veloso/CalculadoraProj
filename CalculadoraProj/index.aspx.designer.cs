@@ -24,6 +24,15 @@ namespace CalculadoraProj
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Controle lblDados.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDados;
+
+        /// <summary>
         /// Controle TbResultado.
         /// </summary>
         /// <remarks>
@@ -33,147 +42,174 @@ namespace CalculadoraProj
         protected global::System.Web.UI.WebControls.TextBox TbResultado;
 
         /// <summary>
-        /// Controle btn7.
+        /// Controle Btn_Limpar0.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn7;
+        protected global::System.Web.UI.WebControls.Button Btn_Limpar0;
 
         /// <summary>
-        /// Controle btn8.
+        /// Controle btn24.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn8;
+        protected global::System.Web.UI.WebControls.Button btn24;
 
         /// <summary>
-        /// Controle btn9.
+        /// Controle btn25.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn9;
+        protected global::System.Web.UI.WebControls.Button btn25;
 
         /// <summary>
-        /// Controle Btndividir.
+        /// Controle btn26.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btndividir;
+        protected global::System.Web.UI.WebControls.Button btn26;
 
         /// <summary>
-        /// Controle Btn4.
+        /// Controle Btndividir1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn4;
+        protected global::System.Web.UI.WebControls.Button Btndividir1;
 
         /// <summary>
-        /// Controle Btn5.
+        /// Controle Btn23.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn5;
+        protected global::System.Web.UI.WebControls.Button Btn23;
 
         /// <summary>
-        /// Controle Btn6.
+        /// Controle Btn21.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn6;
+        protected global::System.Web.UI.WebControls.Button Btn21;
 
         /// <summary>
-        /// Controle Btnmulti.
+        /// Controle Btn22.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btnmulti;
+        protected global::System.Web.UI.WebControls.Button Btn22;
 
         /// <summary>
-        /// Controle Btn1.
+        /// Controle Btnmulti1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn1;
+        protected global::System.Web.UI.WebControls.Button Btnmulti1;
 
         /// <summary>
-        /// Controle Btn2.
+        /// Controle Btn11.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn2;
+        protected global::System.Web.UI.WebControls.Button Btn11;
 
         /// <summary>
-        /// Controle Btn3.
+        /// Controle Btn12.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn3;
+        protected global::System.Web.UI.WebControls.Button Btn12;
 
         /// <summary>
-        /// Controle Btnsub.
+        /// Controle Btn13.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btnsub;
+        protected global::System.Web.UI.WebControls.Button Btn13;
 
         /// <summary>
-        /// Controle Btnvirgula.
+        /// Controle Btnsub0.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btnvirgula;
+        protected global::System.Web.UI.WebControls.Button Btnsub0;
 
         /// <summary>
-        /// Controle Btn0.
+        /// Controle Btnvirgula0.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn0;
+        protected global::System.Web.UI.WebControls.Button Btnvirgula0;
 
         /// <summary>
-        /// Controle Btnigual.
+        /// Controle Btn20.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btnigual;
+        protected global::System.Web.UI.WebControls.Button Btn20;
 
         /// <summary>
-        /// Controle Btnsomar.
+        /// Controle Btnigual1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btnsomar;
+        protected global::System.Web.UI.WebControls.Button Btnigual1;
+
+        /// <summary>
+        /// Controle Btnsomar1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btnsomar1;
+
+        /// <summary>
+        /// Controle Operacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Operacao;
+
+        /// <summary>
+        /// Controle numAnterior.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField numAnterior;
     }
 }

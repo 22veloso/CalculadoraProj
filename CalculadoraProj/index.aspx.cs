@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,16 +12,8 @@ namespace CalculadoraProj
     public partial class index : System.Web.UI.Page
     {
 
-        protected decimal Resultado { get; set; }// propriedade que ira guardar a informação da operação que esta no momento
-        protected decimal Valor { get; set; }// guardando o valor que foi digitado
-        protected Operacao OperacaoSelecionada { get; set; } // essa propriedade vai guardar a informação da operação
-        protected enum Operacao // criando um enumerador , pra facilitar na escolha da operação
-        {
-            Adicao,
-            Subtracao,
-            Multiplicacao,
-            Divisao
-        }
+
+
 
         protected void Btn0_Click(object sender, EventArgs e)
         {
@@ -76,35 +70,36 @@ namespace CalculadoraProj
 
         protected void Btnsub_Click(object sender, EventArgs e)
         {
-            OperacaoSelecionada = Operacao.Subtracao;
-            Valor = Convert.ToDecimal(TbResultado.Text);
+            Operacao.Value = "-";
+            numAnterior.Value = (double.Parse(TbResultado.Text)).ToString();
+            lblDados.Text = lblDados.Text + " " + TbResultado.Text + " - ";
             TbResultado.Text = "";
-
         }
 
         protected void Btnmulti_Click(object sender, EventArgs e)
         {
-            OperacaoSelecionada = Operacao.Multiplicacao;
-            Valor = Convert.ToDecimal(TbResultado.Text);
+            Operacao.Value = "X";
+            numAnterior.Value = (double.Parse(TbResultado.Text)).ToString();
+            lblDados.Text = lblDados.Text + " " + TbResultado.Text + " X ";
             TbResultado.Text = "";
 
         }
 
         protected void Btndividir_Click(object sender, EventArgs e)
         {
-            OperacaoSelecionada = Operacao.Divisao;
-            Valor = Convert.ToDecimal(TbResultado.Text);
+            Operacao.Value = "/";
+            numAnterior.Value = (double.Parse(TbResultado.Text)).ToString();
+            lblDados.Text = lblDados.Text + " " + TbResultado.Text + " / ";
             TbResultado.Text = "";
 
         }
 
         protected void Btnsomar_Click(object sender, EventArgs e)
         {
-            OperacaoSelecionada = Operacao.Adicao;
-
-            Valor = Convert.ToDecimal(TbResultado.Text);// convertendo o tbResultado em decimal
-
-            TbResultado.Text = "";//pra limpar a tela do textBox
+            Operacao.Value = "+";
+            numAnterior.Value = (double.Parse(TbResultado.Text)).ToString();
+            lblDados.Text = lblDados.Text + " " + TbResultado.Text + " + ";
+            TbResultado.Text = "";
 
 
 
@@ -113,22 +108,44 @@ namespace CalculadoraProj
 
         protected void Btnigual_Click(object sender, EventArgs e)
         {
-            switch (OperacaoSelecionada)// switch case faz a função pra saber qual operação foi escolhida
+            switch (Operacao.Value)// switch case faz a função pra saber qual operação foi escolhida
             {
-                case Operacao.Divisao:
-                    Resultado = Valor / Convert.ToDecimal(TbResultado.Text);// convertendo pra decimal
+                case "-":
+                    double Resultado = (double.Parse(numAnterior.Value) - double.Parse(TbResultado.Text));
+                    lblDados.Text = lblDados.Text + " " + TbResultado.Text + " = ";
+                    TbResultado.Text = Resultado.ToString();
+                    WriteTxt(lblDados.Text + " " + Resultado.ToString());
+                    WriteDataBase(lblDados.Text + " " + Resultado.ToString());
 
                     break;
-                case Operacao.Multiplicacao:
-                    Resultado = Valor * Convert.ToDecimal(TbResultado.Text);
+
+                case "X":
+                    Resultado = (double.Parse(numAnterior.Value) * double.Parse(TbResultado.Text));
+                    lblDados.Text = lblDados.Text + " " + TbResultado.Text + " = ";
+                    TbResultado.Text = Resultado.ToString();
+                    WriteTxt(lblDados.Text + " " + Resultado.ToString());
+                    WriteDataBase(lblDados.Text + " " + Resultado.ToString());
                     break;
-                case Operacao.Adicao:
-                    Resultado = Valor + Convert.ToDecimal(TbResultado.Text);
+                case "/":
+                    Resultado = (double.Parse(numAnterior.Value) / double.Parse(TbResultado.Text));
+                    lblDados.Text = lblDados.Text + " " + TbResultado.Text + " = ";
+                    TbResultado.Text = Resultado.ToString();
+                    WriteTxt(lblDados.Text + " " + Resultado.ToString());
+                    WriteDataBase(lblDados.Text + " " + Resultado.ToString());
                     break;
-                case Operacao.Subtracao:
-                    Resultado = Valor - Convert.ToDecimal(TbResultado.Text);
+                case "+":
+                    Resultado = (double.Parse(numAnterior.Value) + double.Parse(TbResultado.Text));
+                    lblDados.Text = lblDados.Text + " " + TbResultado.Text + " = ";
+                    TbResultado.Text = Resultado.ToString();
+                    WriteTxt(lblDados.Text + " " + Resultado.ToString());
+                    WriteDataBase(lblDados.Text + " " + Resultado.ToString());
+                    break;
+
+                default:
+
 
                     break;
+
 
 
 
@@ -136,16 +153,54 @@ namespace CalculadoraProj
             }
 
 
-            TbResultado.Text = Convert.ToString(Resultado);// mostrando o resultado na tela // convertendo pra string
+
         }
 
         protected void Btnvirgula_Click(object sender, EventArgs e)
         {
             if (!TbResultado.Text.Contains(","))
 
-                TbResultado.Text = ",";
+                TbResultado.Text += ",";
+        }
+
+        protected void Btn_Limpar_Click(object sender, EventArgs e)
+        {
+            TbResultado.Text = " ";
+            lblDados.Text = "";
+
+        }
+
+        private void WriteTxt(string result)
+        {
+            string path = @"C:\Users\Lucas Veloso\OneDrive\Documentos\txt\CalculadoraProj.txt";
+            string readText = "";
+
+            if (File.Exists(path))
+            {
+                readText = File.ReadAllText(path);
+            }
+
+            // Write file using StreamWriter  
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                if (readText != "")
+                    writer.Write(readText);
+
+                writer.WriteLine(DateTime.Now + ": " + result);
+            }
+        }
+        private void WriteDataBase(string result)
+        {
+            CalculoModel calculadora = new CalculoModel()
+            {
+                Resultados = result,
+                DataHora = DateTime.Now.ToString()
+            };
+
+            new Banco().Inserir(calculadora);
         }
 
 
     }
 }
+
